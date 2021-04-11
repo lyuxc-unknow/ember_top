@@ -5,6 +5,7 @@ import mcjty.theoneprobe.api.IProbeInfo;
 import mcjty.theoneprobe.api.IProbeInfoProvider;
 import mcjty.theoneprobe.api.ProbeMode;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 import teamroots.embers.tileentity.TileEntityCrystalCell;
@@ -15,7 +16,7 @@ public class ember_crystal_cell implements IProbeInfoProvider {
         if (world.getTileEntity(data.getPos()) instanceof TileEntityCrystalCell) {
             TileEntityCrystalCell tileEntityCrystalCell = (TileEntityCrystalCell) world.getTileEntity(data.getPos());
             assert tileEntityCrystalCell != null;
-            probeInfo.text("\u7070\u70EC\u80FD\u91CF\u50A8\u5B58:" + tileEntityCrystalCell.capability.getEmber() + "/" + tileEntityCrystalCell.capability.getEmberCapacity());
+            probeInfo.text(I18n.format("random.power") + tileEntityCrystalCell.capability.getEmber() + "/" + tileEntityCrystalCell.capability.getEmberCapacity());
         }
     }
 

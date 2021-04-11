@@ -5,6 +5,7 @@ import mcjty.theoneprobe.api.IProbeInfo;
 import mcjty.theoneprobe.api.IProbeInfoProvider;
 import mcjty.theoneprobe.api.ProbeMode;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 import teamroots.embers.tileentity.TileEntityReceiver;
@@ -14,7 +15,7 @@ public class ember_receiver implements IProbeInfoProvider {
         if (world.getTileEntity(data.getPos()) instanceof TileEntityReceiver) {
             TileEntityReceiver tileEntityReceiver = (TileEntityReceiver) world.getTileEntity(data.getPos());
             assert tileEntityReceiver != null;
-            probeInfo.text("\u7070\u70EC\u80FD\u91CF\u7F13\u5B58:" + tileEntityReceiver.capability.getEmber() + "/" + tileEntityReceiver.capability.getEmberCapacity());
+            probeInfo.text(I18n.format("random.power") + tileEntityReceiver.capability.getEmber() + "/" + tileEntityReceiver.capability.getEmberCapacity());
         }
     }
 

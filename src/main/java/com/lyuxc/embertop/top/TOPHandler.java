@@ -24,7 +24,6 @@ public class TOPHandler  {
         theOneProbeImp.registerProvider(new ember_combustor());
         theOneProbeImp.registerProvider(new ember_catalyzer());
         theOneProbeImp.registerProvider(new ember_pulser());
-        theOneProbeImp.registerProvider(new ember_GeoSeparator());
         theOneProbeImp.registerProvider(new ember_funnel());
     }
 }
