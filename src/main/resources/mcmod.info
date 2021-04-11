@@ -1,0 +1,16 @@
+[
+{
+  "modid": "ember_top",
+  "name": "Ember Top",
+  "description": "Ember Addon with Top.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["lyuxc"],
+  "credits": "A Top Addon",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
