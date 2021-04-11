@@ -7,17 +7,18 @@ import mcjty.theoneprobe.api.ProbeMode;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
-import teamroots.embers.tileentity.TileEntityAutoHammer;
+import teamroots.embers.tileentity.TileEntityGeoSeparator;
 
-public class ember_auto_hummer implements IProbeInfoProvider {
+public class ember_GeoSeparator implements IProbeInfoProvider {
     public void addProbeInfo(ProbeMode mode, IProbeInfo probeInfo, EntityPlayer player, World world, IBlockState blockState, IProbeHitData data) {
-        if (world.getTileEntity(data.getPos()) instanceof TileEntityAutoHammer) {
-            TileEntityAutoHammer tileEntityAutoHammer = (TileEntityAutoHammer) world.getTileEntity(data.getPos());
-            probeInfo.text("\u7070\u70EC\u80FD\u91CF\u50A8\u5B58:" + tileEntityAutoHammer.capability.getEmber() + "/" + tileEntityAutoHammer.capability.getEmberCapacity());
+        if (world.getTileEntity(data.getPos()) instanceof TileEntityGeoSeparator) {
+            TileEntityGeoSeparator tileEntityGeoSeparator = (TileEntityGeoSeparator) world.getTileEntity(data.getPos());
+            assert tileEntityGeoSeparator != null;
+            probeInfo.text("\u5B58\u6709:" + tileEntityGeoSeparator.getFluidStack().getLocalizedName());
         }
     }
 
     public String getID() {
-        return "random.ember.auto.hammer";
+        return "random.ember.geoseparator";
     }
 }

@@ -1,6 +1,5 @@
 package com.lyuxc.embertop.top;
 
-
 import mcjty.theoneprobe.api.IProbeHitData;
 import mcjty.theoneprobe.api.IProbeInfo;
 import mcjty.theoneprobe.api.IProbeInfoProvider;
@@ -14,7 +13,6 @@ public class ember_cinder_plinth implements IProbeInfoProvider {
     public void addProbeInfo(ProbeMode mode, IProbeInfo probeInfo, EntityPlayer player, World world, IBlockState blockState, IProbeHitData data) {
         if (world.getTileEntity(data.getPos()) instanceof TileEntityCinderPlinth) {
             TileEntityCinderPlinth tileEntityCinderPlinth = (TileEntityCinderPlinth) world.getTileEntity(data.getPos());
-            assert tileEntityCinderPlinth != null;
             probeInfo.text("\u7070\u70EC\u80FD\u91CF\u50A8\u5B58:" + tileEntityCinderPlinth.capability.getEmber() + "/" + tileEntityCinderPlinth.capability.getEmberCapacity());
         }
     }

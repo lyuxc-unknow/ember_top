@@ -14,7 +14,6 @@ public class ember_beam_cannon implements IProbeInfoProvider {
     public void addProbeInfo(ProbeMode mode, IProbeInfo probeInfo, EntityPlayer player, World world, IBlockState blockState, IProbeHitData data) {
         if (world.getTileEntity(data.getPos()) instanceof TileEntityBeamCannon) {
             TileEntityBeamCannon tileEntityBeamCannon = (TileEntityBeamCannon) world.getTileEntity(data.getPos());
-            assert tileEntityBeamCannon != null;
             probeInfo.text("\u7070\u70EC\u80FD\u91CF\u50A8\u5B58:" + tileEntityBeamCannon.capability.getEmber() + "/" + tileEntityBeamCannon.capability.getEmberCapacity());
         }
     }

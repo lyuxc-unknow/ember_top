@@ -1,6 +1,5 @@
 package com.lyuxc.embertop.top;
 
-
 import mcjty.theoneprobe.api.IProbeHitData;
 import mcjty.theoneprobe.api.IProbeInfo;
 import mcjty.theoneprobe.api.IProbeInfoProvider;
@@ -14,7 +13,6 @@ public class ember_power implements IProbeInfoProvider {
     public void addProbeInfo(ProbeMode mode, IProbeInfo probeInfo, EntityPlayer player, World world, IBlockState blockState, IProbeHitData data) {
         if (world.getTileEntity(data.getPos()) instanceof TileEntityCopperCell) {
             TileEntityCopperCell tileEntityCopperCell = (TileEntityCopperCell) world.getTileEntity(data.getPos());
-            assert tileEntityCopperCell != null;
             probeInfo.text("\u7070\u70EC\u80FD\u91CF\u50A8\u5B58:" + tileEntityCopperCell.capability.getEmber() + "/" + tileEntityCopperCell.capability.getEmberCapacity());
         }
     }
