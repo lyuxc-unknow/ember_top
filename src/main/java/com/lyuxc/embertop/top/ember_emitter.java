@@ -20,12 +20,14 @@ public class ember_emitter implements IProbeInfoProvider {
             int orange = Color.ORANGE.getRGB();
             int yellow = Color.yellow.getRGB();
             int white = Color.white.getRGB();
-            probeInfo.progress(ember, max + 5, new ProgressStyle().prefix(I18n.format("random.power") + ember).suffix("/" + max)
-                    .width(110)
-                    .numberFormat(NumberFormat.NONE)
-                    .borderColor(yellow)
-                    .backgroundColor(white)
-                    .filledColor(orange));
+            if(tileEntityEmitter.capability.getEmber()>0){
+                probeInfo.progress(ember, max + 5, new ProgressStyle().prefix(I18n.format("random.power") + ember).suffix("/" + max)
+                        .width(110)
+                        .numberFormat(NumberFormat.NONE)
+                        .borderColor(yellow)
+                        .backgroundColor(white)
+                        .filledColor(orange));
+            }
         }
     }
 

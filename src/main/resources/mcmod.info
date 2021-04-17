@@ -11,6 +11,7 @@
   "credits": "A Top Addon",
   "logoFile": "",
   "screenshots": [],
-  "dependencies": []
+  "dependencies": [],
+  "requiredMods":["embers","theoneprobe"]
 }
 ]
