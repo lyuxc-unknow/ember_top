@@ -21,8 +21,6 @@ public class TOPHandler  {
         theOneProbeImp.registerProvider(new ember_alchemy_pedestal());
         theOneProbeImp.registerProvider(new ember_emberinjector());
         theOneProbeImp.registerProvider(new ember_reactor());
-        theOneProbeImp.registerProvider(new ember_combustor());
-        theOneProbeImp.registerProvider(new ember_catalyzer());
         theOneProbeImp.registerProvider(new ember_pulser());
         theOneProbeImp.registerProvider(new ember_funnel());
     }
