@@ -8,7 +8,8 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 @Mod(
         modid = EmberTop.MOD_ID,
         name = EmberTop.MOD_NAME,
-        version = "0.0.1"
+        version = "0.0.4",
+        dependencies = "required-after:embers;required-after:theoneprobe"
 )
 
 public class EmberTop {
