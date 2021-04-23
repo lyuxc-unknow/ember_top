@@ -35,17 +35,35 @@ public class ember_mixer implements IProbeInfoProvider {
         if (world.getTileEntity(data.getPos()) instanceof TileEntityMixerBottom) {
             TileEntityMixerBottom tileEntityMixerBottom = (TileEntityMixerBottom) world.getTileEntity(data.getPos());
             assert tileEntityMixerBottom != null;
+            int cyan = Color.cyan.getRGB();
+            int white = Color.white.getRGB();
             if (tileEntityMixerBottom.east.getFluidAmount() > 0) {
-                probeInfo.progress(tileEntityMixerBottom.east.getFluidAmount(), 8000, new ProgressStyle().prefix(I18n.format("random.east.fluid") + Objects.requireNonNull(tileEntityMixerBottom.east.getFluid()).getLocalizedName()).suffix("mb"));
+                probeInfo.progress(tileEntityMixerBottom.east.getFluidAmount(), 8000, new ProgressStyle().prefix(I18n.format("random.east.fluid") + Objects.requireNonNull(tileEntityMixerBottom.east.getFluid()).getLocalizedName()).suffix("mb")
+                .width(130)
+                .backgroundColor(white)
+                .filledColor(cyan)
+                .alternateFilledColor(cyan));
             }
             if (tileEntityMixerBottom.south.getFluidAmount()>0){
-                probeInfo.progress(tileEntityMixerBottom.south.getFluidAmount(), 8000, new ProgressStyle().prefix(I18n.format("random.south.fluid") + Objects.requireNonNull(tileEntityMixerBottom.south.getFluid()).getLocalizedName()).suffix("mb"));
+                probeInfo.progress(tileEntityMixerBottom.south.getFluidAmount(), 8000, new ProgressStyle().prefix(I18n.format("random.south.fluid") + Objects.requireNonNull(tileEntityMixerBottom.south.getFluid()).getLocalizedName()).suffix("mb")
+                .width(130)
+                .backgroundColor(white)
+                .filledColor(cyan)
+                .alternateFilledColor(cyan));
             }
             if (tileEntityMixerBottom.west.getFluidAmount()>0){
-                probeInfo.progress(tileEntityMixerBottom.west.getFluidAmount(), 8000, new ProgressStyle().prefix(I18n.format("random.west.fluid") + Objects.requireNonNull(tileEntityMixerBottom.west.getFluid()).getLocalizedName()).suffix("mb"));
+                probeInfo.progress(tileEntityMixerBottom.west.getFluidAmount(), 8000, new ProgressStyle().prefix(I18n.format("random.west.fluid") + Objects.requireNonNull(tileEntityMixerBottom.west.getFluid()).getLocalizedName()).suffix("mb")
+                .width(130)
+                .backgroundColor(white)
+                .filledColor(cyan)
+                .alternateFilledColor(cyan));
             }
             if (tileEntityMixerBottom.north.getFluidAmount()>0){
-                probeInfo.progress(tileEntityMixerBottom.north.getFluidAmount(), 8000, new ProgressStyle().prefix(I18n.format("random.north.fluid") + Objects.requireNonNull(tileEntityMixerBottom.north.getFluid()).getLocalizedName()).suffix("mb"));
+                probeInfo.progress(tileEntityMixerBottom.north.getFluidAmount(), 8000, new ProgressStyle().prefix(I18n.format("random.north.fluid") + Objects.requireNonNull(tileEntityMixerBottom.north.getFluid()).getLocalizedName()).suffix("mb")
+                .width(130)
+                .backgroundColor(white)
+                .filledColor(cyan)
+                .alternateFilledColor(cyan));
             }
         }
     }
