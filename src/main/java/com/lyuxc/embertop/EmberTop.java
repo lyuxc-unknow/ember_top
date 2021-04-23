@@ -4,6 +4,7 @@ import com.lyuxc.embertop.top.TOPHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import org.apache.logging.log4j.Logger;
 
 @Mod(
         modid = EmberTop.MOD_ID,
@@ -17,7 +18,9 @@ public class EmberTop {
     public static final String MOD_NAME = "Ember Top";
 
     @Mod.EventHandler
-    public void PreInit(FMLPreInitializationEvent event){ }
+    public void PreInit(FMLPreInitializationEvent event){
+        Logger logger = event.getModLog();		
+	}
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {

@@ -1,3 +1,7 @@
 random.aspectus=Aspectus:
 random.ash=Ash:
 random.power=EmberPower:
+random.east.fluid=EastFluid:
+random.west.fluid=WestFluid:
+random.south.fluid=SouthFluid:
+random.north.fluid=NorthFluid:
