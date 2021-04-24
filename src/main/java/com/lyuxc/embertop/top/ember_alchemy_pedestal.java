@@ -24,8 +24,8 @@ public class ember_alchemy_pedestal implements IProbeInfoProvider {
             int gary = SystemColor.GRAY.getRGB();
             int white = Color.white.getRGB();
             if(!tileEntityAlchemyPedestal.inventory.getStackInSlot(0).isEmpty()){
-                probeInfo.progress(tileEntityAlchemyPedestal.inventory.getStackInSlot(0).getCount(), 65, new ProgressStyle().prefix(I18n.format("random.ash") + tileEntityAlchemyPedestal.inventory.getStackInSlot(0).getCount()).suffix("/" + "64")
-                        .width(125)
+                probeInfo.progress(tileEntityAlchemyPedestal.inventory.getStackInSlot(0).getCount()-1, 64, new ProgressStyle().prefix(I18n.format("random.ash") + tileEntityAlchemyPedestal.inventory.getStackInSlot(0).getCount()).suffix("/" + "64")
+                        .width(101)
                         .numberFormat(NumberFormat.NONE)
                         .borderColor(gary)
                         .backgroundColor(white)
