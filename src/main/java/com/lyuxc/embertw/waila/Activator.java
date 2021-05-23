@@ -12,25 +12,21 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import teamroots.embers.tileentity.TileEntityActivatorTop;
 
+import javax.annotation.Nonnull;
 import java.util.List;
 import java.util.Objects;
 
 public class Activator {
     public static class ember implements IWailaDataProvider {
-        @Override
-        public ItemStack getWailaStack(IWailaDataAccessor arg0, IWailaConfigHandler arg1) { return null; }
-        @Override
-        public List<String> getWailaHead(ItemStack arg0, List<String> currenttip, IWailaDataAccessor arg2, IWailaConfigHandler arg3) { return currenttip;}
+        @Nonnull
         @Override
         public List<String> getWailaBody(ItemStack stack, List<String> currenttip, IWailaDataAccessor accessor, IWailaConfigHandler config) {
 
             double ember = ((TileEntityActivatorTop) Objects.requireNonNull(accessor.getTileEntity())).capability.getEmber();
-            double maxember = ((TileEntityActivatorTop) Objects.requireNonNull(accessor.getTileEntity())).capability.getEmberCapacity();
-            currenttip.add(I18n.format("random.power")+":"+ember+"/"+maxember);
+            double maxember = ((TileEntityActivatorTop) accessor.getTileEntity()).capability.getEmberCapacity();
+            currenttip.add(I18n.format("random.power") + ":" + ember + "/" + maxember);
 
             return currenttip;
         }
-        @Override
-        public NBTTagCompound getNBTData(EntityPlayerMP arg0, TileEntity arg1, NBTTagCompound arg2, World arg3, BlockPos arg4) { return null; }
     }
 }

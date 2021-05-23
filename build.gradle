@@ -9,9 +9,9 @@ buildscript {
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
 
-version = "0.0.7"
-group = "com.lyuxc.embertop"
-archivesBaseName = "EmberTop"
+version = "0.0.8"
+group = "com.lyuxc.embertw"
+archivesBaseName = "EmberTW[TOP-And-Waila]"
 
 sourceCompatibility = targetCompatibility = '1.8'
 compileJava {

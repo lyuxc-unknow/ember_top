@@ -24,23 +24,12 @@ public class MixinBottom {
         public List<String> getWailaHead(ItemStack arg0, List<String> currenttip, IWailaDataAccessor arg2, IWailaConfigHandler arg3) { return currenttip;}
         @Override
         public List<String> getWailaBody(ItemStack stack, List<String> currenttip, IWailaDataAccessor accessor, IWailaConfigHandler config) {
-
             TileEntityMixerBottom tileEntityMixerBottom = (TileEntityMixerBottom)accessor.getTileEntity();
             assert tileEntityMixerBottom != null;
-            if(tileEntityMixerBottom.south.getFluidAmount()>0){
-                currenttip.add(I18n.format("random.south.fluid")+ Objects.requireNonNull(tileEntityMixerBottom.south.getFluid()).getLocalizedName()+"*"+tileEntityMixerBottom.south.getFluidAmount());
-            }
-            if(tileEntityMixerBottom.west.getFluidAmount()>0){
-                currenttip.add(I18n.format("random.west.fluid")+ Objects.requireNonNull(tileEntityMixerBottom.west.getFluid()).getLocalizedName()+"*"+tileEntityMixerBottom.south.getFluidAmount());
-            }
-            if(tileEntityMixerBottom.east.getFluidAmount()>0){
-                currenttip.add(I18n.format("random.east.fluid")+ Objects.requireNonNull(tileEntityMixerBottom.east.getFluid()).getLocalizedName()+"*"+tileEntityMixerBottom.south.getFluidAmount());
-
-            }
-            if(tileEntityMixerBottom.north.getFluidAmount()>0){
-                currenttip.add(I18n.format("random.north.fluid")+ Objects.requireNonNull(tileEntityMixerBottom.south.getFluid()).getLocalizedName()+"*"+tileEntityMixerBottom.north.getFluidAmount());
-            }
-
+            currenttip.add(I18n.format("random.east.fluid")+ Objects.requireNonNull(tileEntityMixerBottom.east.getFluid()).getLocalizedName()+"*"+tileEntityMixerBottom.east.getFluidAmount()+"mB");
+            currenttip.add(I18n.format("random.south.fluid")+ Objects.requireNonNull(tileEntityMixerBottom.south.getFluid()).getLocalizedName()+"*"+tileEntityMixerBottom.south.getFluidAmount()+"mB");
+            currenttip.add(I18n.format("random.west.fluid")+ Objects.requireNonNull(tileEntityMixerBottom.west.getFluid()).getLocalizedName()+"*"+tileEntityMixerBottom.west.getFluidAmount()+"mB");
+            currenttip.add(I18n.format("random.north.fluid")+ Objects.requireNonNull(tileEntityMixerBottom.north.getFluid()).getLocalizedName()+"*"+tileEntityMixerBottom.north.getFluidAmount()+"mB");
             return currenttip;
         }
         @Override

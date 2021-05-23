@@ -2,13 +2,13 @@
 {
   "modid": "ember_top",
   "name": "Ember Top",
-  "description": "Ember Addon with Top.",
+  "description": "Ember Addon with Top And Waila.",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
   "authorList": ["lyuxc"],
-  "credits": "A Top Addon",
+  "credits": "Waila部分存在无法实时刷新的BUG，慎用,[解决方法,重进存档]",
   "logoFile": "",
   "screenshots": [],
   "dependencies": ["embers","theoneprobe"]

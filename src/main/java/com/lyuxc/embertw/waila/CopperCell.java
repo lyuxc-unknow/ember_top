@@ -8,29 +8,47 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntityBrewingStand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import teamroots.embers.tileentity.TileEntityCopperCell;
 
+import javax.annotation.Nonnull;
 import java.util.List;
 import java.util.Objects;
 
 public class CopperCell {
     public static class ember implements IWailaDataProvider {
-        @Override
-        public ItemStack getWailaStack(IWailaDataAccessor arg0, IWailaConfigHandler arg1) { return null; }
-        @Override
-        public List<String> getWailaHead(ItemStack arg0, List<String> currenttip, IWailaDataAccessor arg2, IWailaConfigHandler arg3) { return currenttip;}
+        @Nonnull
         @Override
         public List<String> getWailaBody(ItemStack stack, List<String> currenttip, IWailaDataAccessor accessor, IWailaConfigHandler config) {
-
+            TileEntityCopperCell tileEntityCopperCell = (TileEntityCopperCell)accessor.getTileEntity();
             double ember = ((TileEntityCopperCell) Objects.requireNonNull(accessor.getTileEntity())).capability.getEmber();
-            double maxember = ((TileEntityCopperCell) Objects.requireNonNull(accessor.getTileEntity())).capability.getEmberCapacity();
-            currenttip.add(I18n.format("random.power")+":"+ember+"/"+maxember);
-
+            double maxember = ((TileEntityCopperCell)accessor.getTileEntity()).capability.getEmberCapacity();
+            assert tileEntityCopperCell != null;
+            if(tileEntityCopperCell.capability.getEmber()>0){
+                currenttip.add(I18n.format("random.power")+":"+ember+"/"+maxember);
+            }
             return currenttip;
         }
         @Override
-        public NBTTagCompound getNBTData(EntityPlayerMP arg0, TileEntity arg1, NBTTagCompound arg2, World arg3, BlockPos arg4) { return null; }
+        public List<String> getWailaTail(ItemStack itemStack, List<String> currenttip, IWailaDataAccessor accessor, IWailaConfigHandler config) {
+            return currenttip;
+        }
+        @Override
+        public NBTTagCompound getNBTData(EntityPlayerMP player, TileEntity te, NBTTagCompound tag, World world, BlockPos pos)
+        {
+            if ( te instanceof TileEntityCopperCell)
+            {
+                TileEntityCopperCell cell = (TileEntityCopperCell) te;
+                NBTTagCompound compound = new NBTTagCompound();
+                int ember = (int)cell.capability.getEmber();
+                int max = (int)cell.capability.getEmberCapacity();
+                compound.setInteger("ember", ember);
+                compound.setInteger("embercapacity", max);
+                tag.setTag("Ember", compound);
+            }
+            return tag;
+        }
     }
 }
