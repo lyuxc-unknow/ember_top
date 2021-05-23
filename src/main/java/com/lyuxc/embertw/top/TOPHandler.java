@@ -25,6 +25,7 @@ public class TOPHandler  {
             theOneProbeImp.registerProvider(new ember_reactor());
             theOneProbeImp.registerProvider(new ember_pulser());
             theOneProbeImp.registerProvider(new ember_funnel());
+            theOneProbeImp.registerProvider(new ember_boiler());
         }
     }
 }

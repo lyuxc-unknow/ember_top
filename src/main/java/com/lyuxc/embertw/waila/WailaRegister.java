@@ -45,8 +45,7 @@ public class WailaRegister implements IWailaPlugin {
 
             registrar.registerBodyProvider(new Stampr.ember(),BlockStamper.class);
 
-            registrar.registerNBTProvider(new CopperCell.ember(),BlockCopperCell.class);
-
+            registrar.registerBodyProvider(new Boiler.ember(),BlockBoiler.class);
         }
     }
 }

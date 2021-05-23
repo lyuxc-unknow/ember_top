@@ -11,7 +11,6 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import teamroots.embers.tileentity.TileEntityMixerBottom;
-import teamroots.embers.tileentity.TileEntityMixerTop;
 
 import java.util.List;
 import java.util.Objects;
