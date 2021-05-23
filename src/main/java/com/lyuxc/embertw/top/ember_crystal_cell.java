@@ -1,4 +1,4 @@
-package com.lyuxc.embertop.top;
+package com.lyuxc.embertw.top;
 
 import mcjty.theoneprobe.api.*;
 import mcjty.theoneprobe.apiimpl.styles.ProgressStyle;
@@ -22,7 +22,7 @@ public class ember_crystal_cell implements IProbeInfoProvider {
             int yellow = Color.yellow.getRGB();
             int white = Color.white.getRGB();
             if(tileEntityCrystalCell.capability.getEmber()>0){
-                probeInfo.progress(ember, max + 5, new ProgressStyle().prefix(I18n.format("random.power") + ember).suffix("/" + max)
+                probeInfo.progress(ember, max + 5, new ProgressStyle().prefix(I18n.format("random.power") + ":" + ember).suffix("/" + max)
                         .width(110)
                         .numberFormat(NumberFormat.NONE)
                         .borderColor(yellow)

@@ -1,4 +1,4 @@
-package com.lyuxc.embertop.top;
+package com.lyuxc.embertw.top;
 
 import mcjty.theoneprobe.api.*;
 import mcjty.theoneprobe.apiimpl.styles.ProgressStyle;
@@ -7,7 +7,6 @@ import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 import teamroots.embers.tileentity.TileEntityAlchemyPedestal;
-import teamroots.embers.tileentity.TileEntityLargeTank;
 
 import java.awt.*;
 
