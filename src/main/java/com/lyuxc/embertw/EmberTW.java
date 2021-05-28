@@ -19,8 +19,8 @@ import java.io.File;
 )
 
 public class EmberTW {
-    public static final String MOD_ID = "ember_top";
-    public static final String MOD_NAME = "Ember Top";
+    public static final String MOD_ID = "ember_top_and_waila";
+    public static final String MOD_NAME = "Ember Top and Waila";
     public static Configuration configuration;
 
     @Mod.EventHandler

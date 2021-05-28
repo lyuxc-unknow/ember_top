@@ -1,7 +1,7 @@
 [
 {
-  "modid": "ember_top",
-  "name": "Ember Top",
+  "modid": "ember_top_and_waila",
+  "name": "Ember Top and Waila",
   "description": "Ember Addon with Top And Waila.",
   "version": "${version}",
   "mcversion": "${mcversion}",
@@ -11,6 +11,6 @@
   "credits": "Waila部分存在无法实时刷新的BUG,慎用,[解决方法,重进存档]",
   "logoFile": "",
   "screenshots": [],
-  "dependencies": ["embers","theoneprobe"]
+  "dependencies": ["embers"]
 }
 ]
