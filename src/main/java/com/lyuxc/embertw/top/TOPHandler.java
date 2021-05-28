@@ -1,12 +1,13 @@
 package com.lyuxc.embertw.top;
 
+import com.lyuxc.embertw.ConfigHandler;
 import mcjty.theoneprobe.TheOneProbe;
 import mcjty.theoneprobe.apiimpl.TheOneProbeImp;
 import net.minecraftforge.fml.common.Loader;
 
 public class TOPHandler  {
     public static void registerTips(){
-        if(Loader.isModLoaded("theoneprobe")){
+        if(Loader.isModLoaded("theoneprobe")& ConfigHandler.top){
             TheOneProbeImp theOneProbeImp = TheOneProbe.theOneProbeImp;
             theOneProbeImp.registerProvider(new ember_coppercell());
             theOneProbeImp.registerProvider(new ember_auto_hummer());

@@ -6,6 +6,7 @@ import mcp.mobius.waila.api.IWailaDataProvider;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
 import teamroots.embers.tileentity.TileEntityBoilerTop;
+import teamroots.embers.tileentity.TileEntityCopperCell;
 
 import javax.annotation.Nonnull;
 import java.util.List;
@@ -17,8 +18,8 @@ public class CopperCell {
         @Override
         public List<String> getWailaBody(ItemStack stack, List<String> currenttip, IWailaDataAccessor accessor, IWailaConfigHandler config) {
 
-            double ember = ((TileEntityBoilerTop) Objects.requireNonNull(accessor.getTileEntity())).capability.getEmber();
-            double maxember = ((TileEntityBoilerTop) accessor.getTileEntity()).capability.getEmberCapacity();
+            double ember = ((TileEntityCopperCell) Objects.requireNonNull(accessor.getTileEntity())).capability.getEmber();
+            double maxember = ((TileEntityCopperCell) accessor.getTileEntity()).capability.getEmberCapacity();
             currenttip.add(I18n.format("random.power") + ":" + ember + "/" + maxember);
 
             return currenttip;

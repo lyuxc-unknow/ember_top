@@ -1,5 +1,6 @@
 package com.lyuxc.embertw.waila;
 
+import com.lyuxc.embertw.ConfigHandler;
 import mcp.mobius.waila.api.IWailaPlugin;
 import mcp.mobius.waila.api.IWailaRegistrar;
 import mcp.mobius.waila.api.WailaPlugin;
@@ -9,7 +10,7 @@ import teamroots.embers.block.*;
 @WailaPlugin
 public class WailaRegister implements IWailaPlugin {
     public void register(IWailaRegistrar registrar){
-        if(Loader.isModLoaded("waila")){
+        if(Loader.isModLoaded("waila")& ConfigHandler.waila ==true){
             
             registrar.registerBodyProvider(new CopperCell.ember(), BlockCopperCell.class);
 
