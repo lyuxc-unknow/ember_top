@@ -37,8 +37,7 @@ repositories {
 }
 
 dependencies {
-    deobfCompile "mcjty.theoneprobe:TheOneProbe-${top_version}"
-    deobfCompile "cofh:RedstoneFlux:${redstoneflux_version}"
+    compile "mcjty.theoneprobe:TheOneProbe-${top_version}"
     deobfCompile "curse.maven:embersrekindled-300777:3225431"
     compile "curse.maven:hwyla-253449:2568751"
 }
