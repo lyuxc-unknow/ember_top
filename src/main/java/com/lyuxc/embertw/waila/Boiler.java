@@ -4,7 +4,12 @@ import mcp.mobius.waila.api.IWailaConfigHandler;
 import mcp.mobius.waila.api.IWailaDataAccessor;
 import mcp.mobius.waila.api.IWailaDataProvider;
 import net.minecraft.client.resources.I18n;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import teamroots.embers.tileentity.TileEntityBoilerTop;
 
 import javax.annotation.Nonnull;
@@ -21,14 +26,15 @@ public class Boiler {
         public List<String> getWailaHead(ItemStack itemStack, List<String> tips, IWailaDataAccessor wailaDataAccessor, IWailaConfigHandler wailaConfigHandler) { return tips;}
         @Nonnull
         @Override
-        public List<String> getWailaBody(ItemStack stack, List<String> tips, IWailaDataAccessor accessor, IWailaConfigHandler config) {
+        public List<String> getWailaBody(ItemStack stack, List<String> tips, IWailaDataAccessor wailaDataAccessor, IWailaConfigHandler wailaConfigHandler) {
 
-            double ember = ((TileEntityBoilerTop) Objects.requireNonNull(accessor.getTileEntity())).capability.getEmber();
-            double maxember = ((TileEntityBoilerTop) accessor.getTileEntity()).capability.getEmberCapacity();
+            double ember = ((TileEntityBoilerTop) Objects.requireNonNull(wailaDataAccessor.getTileEntity())).capability.getEmber();
+            double maxember = ((TileEntityBoilerTop) wailaDataAccessor.getTileEntity()).capability.getEmberCapacity();
             tips.add(I18n.format("random.power") + ":" + ember + "/" + maxember);
 
             return tips;
         }
+        @Nonnull
         @Override
         public NBTTagCompound getNBTData(EntityPlayerMP entityPlayerMP, TileEntity tileEntity, NBTTagCompound nbtTagCompound, World world, BlockPos blockPos) { return null; }
     }

@@ -4,7 +4,12 @@ import mcp.mobius.waila.api.IWailaConfigHandler;
 import mcp.mobius.waila.api.IWailaDataAccessor;
 import mcp.mobius.waila.api.IWailaDataProvider;
 import net.minecraft.client.resources.I18n;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import teamroots.embers.tileentity.TileEntityBoilerTop;
 import teamroots.embers.tileentity.TileEntityCopperCell;
 
@@ -25,7 +30,7 @@ public class CopperCell {
         public List<String> getWailaBody(ItemStack itemStack, List<String> tips, IWailaDataAccessor wailaDataAccessor, IWailaConfigHandler wailaConfigHandler) {
 
             double ember = ((TileEntityCopperCell) Objects.requireNonNull(wailaDataAccessor.getTileEntity())).capability.getEmber();
-            double maxember = ((TileEntityCopperCell) wailaDataAccessor.getTileEntity()).capability.getEmberCapacity();
+            double maxember = ((TileEntityCopperCell) Objects.requireNonNull(wailaDataAccessor.getTileEntity())).capability.getEmberCapacity();
             tips.add(I18n.format("random.power") + ":" + ember + "/" + maxember);
 
             return tips;

@@ -25,7 +25,7 @@ public class MixinBottom {
         @Nonnull
         @Override
         public List<String> getWailaBody(ItemStack itemStack, List<String> tips, IWailaDataAccessor wailaDataAccessor, IWailaConfigHandler wailaConfigHandler) {
-            TileEntityMixerBottom tileEntityMixerBottom = (TileEntityMixerBottom)accessor.getTileEntity();
+            TileEntityMixerBottom tileEntityMixerBottom = (TileEntityMixerBottom)wailaDataAccessor.getTileEntity();
             assert tileEntityMixerBottom != null;
             if(tileEntityMixerBottom.east.getFluidAmount()>0){
                 tips.add(I18n.format("random.east.fluid") + ":" + Objects.requireNonNull(tileEntityMixerBottom.east.getFluid()).getLocalizedName()+"*"+tileEntityMixerBottom.east.getFluidAmount()+"mB");

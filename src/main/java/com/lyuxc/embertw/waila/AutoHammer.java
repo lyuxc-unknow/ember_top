@@ -28,7 +28,7 @@ public class AutoHammer {
         public List<String> getWailaBody(ItemStack itemStack, List<String> tips, IWailaDataAccessor wailaDataAccessor, IWailaConfigHandler configHandler) {
 
             double ember = ((TileEntityAutoHammer) Objects.requireNonNull(wailaDataAccessor.getTileEntity())).capability.getEmber();
-            double maxember = ((TileEntityAutoHammer) Objects.requireNonNull(accessor.getTileEntity())).capability.getEmberCapacity();
+            double maxember = ((TileEntityAutoHammer) Objects.requireNonNull(wailaDataAccessor.getTileEntity())).capability.getEmberCapacity();
             tips.add(I18n.format("random.power")+":"+ember+"/"+maxember);
 
             return tips;

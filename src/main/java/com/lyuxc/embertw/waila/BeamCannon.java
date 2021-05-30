@@ -29,7 +29,7 @@ public class BeamCannon {
         public List<String> getWailaBody(ItemStack itemStack, List<String> tips, IWailaDataAccessor wailaDataAccessor, IWailaConfigHandler wailaConfigHandler) {
 
             double ember = ((TileEntityBeamCannon) Objects.requireNonNull(wailaDataAccessor.getTileEntity())).capability.getEmber();
-            double maxember = ((TileEntityBeamCannon) Objects.requireNonNull(accessor.getTileEntity())).capability.getEmberCapacity();
+            double maxember = ((TileEntityBeamCannon) Objects.requireNonNull(wailaDataAccessor.getTileEntity())).capability.getEmberCapacity();
             tips.add(I18n.format("random.power")+":"+ember+"/"+maxember);
 
             return tips;

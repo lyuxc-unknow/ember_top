@@ -20,7 +20,7 @@ public class Receiver {
         @Override
         public ItemStack getWailaStack(IWailaDataAccessor wailaDataAccessor, IWailaConfigHandler wailaConfigHandler) { return null; }
         @Override
-        public List<String> getWailaHead(ItemStack itemStack, List<String> tips, IWailaDataAccessor wailaDataAccessor, IWailaConfigHandler wailaConfigHandler) { return currenttip;}
+        public List<String> getWailaHead(ItemStack itemStack, List<String> tips, IWailaDataAccessor wailaDataAccessor, IWailaConfigHandler wailaConfigHandler) { return tips;}
         @Override
         public List<String> getWailaBody(ItemStack itemStack, List<String> tips, IWailaDataAccessor wailaDataAccessor, IWailaConfigHandler wailaConfigHandler) {
 
