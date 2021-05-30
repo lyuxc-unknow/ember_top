@@ -14,7 +14,7 @@ import java.io.File;
 @Mod(
         modid = EmberTW.MOD_ID,
         name = EmberTW.MOD_NAME,
-        version = "0.0.4",
+        version = "0.0.10",
         dependencies = "required-after:embers;after:theoneprobe;after:waila"
 )
 

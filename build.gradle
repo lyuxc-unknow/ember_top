@@ -8,7 +8,7 @@ buildscript {
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
 
-version = "0.0.9"
+version = "0.0.10"
 group = "com.lyuxc.embertw"
 archivesBaseName = "EmberTW[TOP-And-Waila]"
 
