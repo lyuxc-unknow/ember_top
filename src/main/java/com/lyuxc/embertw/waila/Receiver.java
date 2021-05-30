@@ -18,19 +18,19 @@ import java.util.Objects;
 public class Receiver {
     public static class ember implements IWailaDataProvider {
         @Override
-        public ItemStack getWailaStack(IWailaDataAccessor arg0, IWailaConfigHandler arg1) { return null; }
+        public ItemStack getWailaStack(IWailaDataAccessor wailaDataAccessor, IWailaConfigHandler wailaConfigHandler) { return null; }
         @Override
-        public List<String> getWailaHead(ItemStack arg0, List<String> currenttip, IWailaDataAccessor arg2, IWailaConfigHandler arg3) { return currenttip;}
+        public List<String> getWailaHead(ItemStack itemStack, List<String> tips, IWailaDataAccessor wailaDataAccessor, IWailaConfigHandler wailaConfigHandler) { return currenttip;}
         @Override
-        public List<String> getWailaBody(ItemStack stack, List<String> currenttip, IWailaDataAccessor accessor, IWailaConfigHandler config) {
+        public List<String> getWailaBody(ItemStack itemStack, List<String> tips, IWailaDataAccessor wailaDataAccessor, IWailaConfigHandler wailaConfigHandler) {
 
-            double ember = ((TileEntityReceiver) Objects.requireNonNull(accessor.getTileEntity())).capability.getEmber();
-            double maxember = ((TileEntityReceiver) Objects.requireNonNull(accessor.getTileEntity())).capability.getEmberCapacity();
-            currenttip.add(I18n.format("random.power")+":"+ember+"/"+maxember);
+            double ember = ((TileEntityReceiver) Objects.requireNonNull(wailaDataAccessor.getTileEntity())).capability.getEmber();
+            double maxember = ((TileEntityReceiver) Objects.requireNonNull(wailaDataAccessor.getTileEntity())).capability.getEmberCapacity();
+            tips.add(I18n.format("random.power")+":"+ember+"/"+maxember);
 
-            return currenttip;
+            return tips;
         }
         @Override
-        public NBTTagCompound getNBTData(EntityPlayerMP arg0, TileEntity arg1, NBTTagCompound arg2, World arg3, BlockPos arg4) { return null; }
+        public NBTTagCompound getNBTData(EntityPlayerMP entityPlayerMP, TileEntity tileEntity, NBTTagCompound nbtTagCompound, World world, BlockPos blockPos) { return null; }
     }
 }

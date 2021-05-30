@@ -12,26 +12,37 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import teamroots.embers.tileentity.TileEntityMixerBottom;
 
+import javax.annotation.Nonnull;
 import java.util.List;
 import java.util.Objects;
 
 public class MixinBottom {
     public static class l implements IWailaDataProvider {
         @Override
-        public ItemStack getWailaStack(IWailaDataAccessor arg0, IWailaConfigHandler arg1) { return null; }
+        public ItemStack getWailaStack(IWailaDataAccessor wailaDataAccessor, IWailaConfigHandler iWailaConfigHandler) { return null; }
         @Override
-        public List<String> getWailaHead(ItemStack arg0, List<String> currenttip, IWailaDataAccessor arg2, IWailaConfigHandler arg3) { return currenttip;}
+        public List<String> getWailaHead(ItemStack itemStack, List<String> tips, IWailaDataAccessor wailaDataAccessor, IWailaConfigHandler wailaConfigHandler) { return tips;}
+        @Nonnull
         @Override
-        public List<String> getWailaBody(ItemStack stack, List<String> currenttip, IWailaDataAccessor accessor, IWailaConfigHandler config) {
+        public List<String> getWailaBody(ItemStack itemStack, List<String> tips, IWailaDataAccessor wailaDataAccessor, IWailaConfigHandler wailaConfigHandler) {
             TileEntityMixerBottom tileEntityMixerBottom = (TileEntityMixerBottom)accessor.getTileEntity();
             assert tileEntityMixerBottom != null;
-            currenttip.add(I18n.format("random.east.fluid")+ Objects.requireNonNull(tileEntityMixerBottom.east.getFluid()).getLocalizedName()+"*"+tileEntityMixerBottom.east.getFluidAmount()+"mB");
-            currenttip.add(I18n.format("random.south.fluid")+ Objects.requireNonNull(tileEntityMixerBottom.south.getFluid()).getLocalizedName()+"*"+tileEntityMixerBottom.south.getFluidAmount()+"mB");
-            currenttip.add(I18n.format("random.west.fluid")+ Objects.requireNonNull(tileEntityMixerBottom.west.getFluid()).getLocalizedName()+"*"+tileEntityMixerBottom.west.getFluidAmount()+"mB");
-            currenttip.add(I18n.format("random.north.fluid")+ Objects.requireNonNull(tileEntityMixerBottom.north.getFluid()).getLocalizedName()+"*"+tileEntityMixerBottom.north.getFluidAmount()+"mB");
-            return currenttip;
+            if(tileEntityMixerBottom.east.getFluidAmount()>0){
+                tips.add(I18n.format("random.east.fluid") + ":" + Objects.requireNonNull(tileEntityMixerBottom.east.getFluid()).getLocalizedName()+"*"+tileEntityMixerBottom.east.getFluidAmount()+"mB");
+            }
+            if(tileEntityMixerBottom.south.getFluidAmount()>0){
+                tips.add(I18n.format("random.south.fluid") + ":" + Objects.requireNonNull(tileEntityMixerBottom.south.getFluid()).getLocalizedName()+"*"+tileEntityMixerBottom.south.getFluidAmount()+"mB");
+            }
+            if(tileEntityMixerBottom.west.getFluidAmount()>0){
+                tips.add(I18n.format("random.west.fluid") + ":" + Objects.requireNonNull(tileEntityMixerBottom.west.getFluid()).getLocalizedName()+"*"+tileEntityMixerBottom.west.getFluidAmount()+"mB");
+            }
+            if(tileEntityMixerBottom.north.getFluidAmount()>0){
+                tips.add(I18n.format("random.north.fluid") + ":" + Objects.requireNonNull(tileEntityMixerBottom.north.getFluid()).getLocalizedName()+"*"+tileEntityMixerBottom.north.getFluidAmount()+"mB");
+            }
+            return tips;
         }
+        @Nonnull
         @Override
-        public NBTTagCompound getNBTData(EntityPlayerMP arg0, TileEntity arg1, NBTTagCompound arg2, World arg3, BlockPos arg4) { return null; }
+        public NBTTagCompound getNBTData(EntityPlayerMP entityPlayerMP, TileEntity tileEntity, NBTTagCompound nbtTagCompound, World world, BlockPos blockPos) { return null; }
     }
 }

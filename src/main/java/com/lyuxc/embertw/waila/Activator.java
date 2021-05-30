@@ -15,13 +15,21 @@ public class Activator {
     public static class ember implements IWailaDataProvider {
         @Nonnull
         @Override
-        public List<String> getWailaBody(ItemStack stack, List<String> currenttip, IWailaDataAccessor accessor, IWailaConfigHandler config) {
+        public ItemStack getWailaStack(IWailaDataAccessor wailaDataAccessor, IWailaConfigHandler wailaConfigHandler) { return null; }
+        @Nonnull
+        @Override
+        public List<String> getWailaHead(ItemStack itemStack, List<String> tips, IWailaDataAccessor wailaDataAccessor, IWailaConfigHandler wailaConfigHandler) { return tips;}
+        @Nonnull
+        @Override
+        public List<String> getWailaBody(ItemStack itemStack, List<String> tips, IWailaDataAccessor wailaDataAccessor, IWailaConfigHandler wailaConfigHandler) {
 
-            double ember = ((TileEntityActivatorTop) Objects.requireNonNull(accessor.getTileEntity())).capability.getEmber();
+            double ember = ((TileEntityActivatorTop) Objects.requireNonNull(wailaDataAccessor.getTileEntity())).capability.getEmber();
             double maxember = ((TileEntityActivatorTop) accessor.getTileEntity()).capability.getEmberCapacity();
-            currenttip.add(I18n.format("random.power") + ":" + ember + "/" + maxember);
+            tips.add(I18n.format("random.power") + ":" + ember + "/" + maxember);
 
-            return currenttip;
+            return tips;
         }
+        @Override
+        public NBTTagCompound getNBTData(EntityPlayerMP entityPlayerMP, TileEntity tileEntity, NBTTagCompound nbtTagCompound, World world, BlockPos blockPos) { return null; }
     }
 }
