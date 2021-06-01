@@ -16,14 +16,14 @@ public class ember_alchemy_pedestal implements IProbeInfoProvider {
             TileEntityAlchemyPedestal tileEntityAlchemyPedestal = (TileEntityAlchemyPedestal) world.getTileEntity(data.getPos());
             assert tileEntityAlchemyPedestal != null;
             if (!tileEntityAlchemyPedestal.inventory.getStackInSlot(1).isEmpty()) {
-                probeInfo.text(I18n.format("random.aspectus") + ":" + tileEntityAlchemyPedestal.inventory.getStackInSlot(1).getDisplayName());
+                probeInfo.text("Aspectus" + ":" + tileEntityAlchemyPedestal.inventory.getStackInSlot(1).getDisplayName());
             }
             int blackRGB = Color.black.getRGB();
             int darkGrayRGB = Color.darkGray.getRGB();
             int gary = SystemColor.GRAY.getRGB();
             int white = Color.white.getRGB();
             if(!tileEntityAlchemyPedestal.inventory.getStackInSlot(0).isEmpty()){
-                probeInfo.progress(tileEntityAlchemyPedestal.inventory.getStackInSlot(0).getCount()-1, 64, new ProgressStyle().prefix(I18n.format("random.ash") + ":" + tileEntityAlchemyPedestal.inventory.getStackInSlot(0).getCount()).suffix("/" + "64")
+                probeInfo.progress(tileEntityAlchemyPedestal.inventory.getStackInSlot(0).getCount()-1, 64, new ProgressStyle().prefix("Ash" + ":" + tileEntityAlchemyPedestal.inventory.getStackInSlot(0).getCount()).suffix("/" + "64")
                         .width(101)
                         .numberFormat(NumberFormat.NONE)
                         .borderColor(gary)

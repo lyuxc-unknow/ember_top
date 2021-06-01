@@ -21,7 +21,7 @@ public class ember_BeamSplitter implements IProbeInfoProvider {
             int yellow = Color.yellow.getRGB();
             int white = Color.white.getRGB();
             if(tileEntityBeamSplitter.capability.getEmber()>0){
-                probeInfo.progress(ember, max + 3, new ProgressStyle().prefix(I18n.format("random.power") + ":" + ember).suffix("/" + max)
+                probeInfo.progress(ember, max + 3, new ProgressStyle().prefix("Ember" + ":" + ember).suffix("/" + max)
                         .width(100)
                         .numberFormat(NumberFormat.NONE)
                         .borderColor(yellow)

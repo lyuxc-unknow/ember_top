@@ -8,7 +8,7 @@
   "url": "",
   "updateUrl": "",
   "authorList": ["lyuxc"],
-  "credits": "Waila部分存在无法实时刷新的BUG,慎用,[解决方法:重进存档]",
+  "credits": "Waila部分存在无法实时刷新的BUG,慎用,[重进存档]",
   "logoFile": "",
   "screenshots": [],
   "dependencies": ["embers"]
